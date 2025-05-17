@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>System Panel</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" async></script>
+</head>
+<body>
+  <audio id="startupSound" src="sound_1.MP3"></audio>
+
+  
+  <div class="panel">
+        <div id="terminal">Press Del to initialize the system</div>
+        <div id="terminal-output" class="terminal"></div>
+<div id="welcome-message" style="margin-top: 5px; display: none;">
+    <p>Welcome To T1B Terminal Interface</p><br>
+    <p>Type '-help' and press [Enter] to see available commands.</p><br>
+</div>
+<div style="margin-top: 5px;">
+  <input id="terminalinput" type="text" autocomplete="off" placeholder="Type a command..." />
+</div>
+
+<div id="output"></div>
+
+
+ 
+        <div class="bottom-panel">
+            <div id="NetworkStatus">Network Status: OFFLINE</div>
+            <div id="lastUpdate">Last update: Loading...</div>
+        </div>
+        
+        
+    </div>
+
+   
+  
+</body>
+</html>

@@ -1,0 +1,122 @@
+body {
+            font-family: "Courier New", monospace;
+            background-color: #000;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+    }
+
+       .panel {
+            width: 80%;
+            height: 80%;
+            border: 2px solid #00ff00;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            overflow-y: auto;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+            position: relative;
+        }
+
+        /* Terminal Satır Stili */
+        .terminal-line {
+            margin: 0;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        /* Buton Stili */
+        .panel-button {
+            background-color: #333;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .panel-button:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+
+        /* Alt Panel Bölmesi */
+        .bottom-panel {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            right: 20px;
+        }
+
+    #terminal {
+      padding: 0px;
+      white-space: pre-wrap;
+      overflow-y: auto;
+    }
+
+    #main-panel {
+      display: none;
+      background-color: #111;
+      color: white;
+      padding: 40px;
+    }
+
+    .terminal {
+    max-height: 600px;
+    background: black;
+    color: #0f0;
+    font-family: monospace;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+
+    #terminalinput {
+      display: none;
+      width: 100%;
+      background: black;
+      color: #0f0;
+      font-family: monospace;
+      border: none;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    #opening-animation {
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+
+    #terminal-wrapper {
+      display: none; /* Başlangıçta gizli */
+      padding: 20px;
+    }
+
+    /* Kaydırma çubuğunun genel stilini özelleştirme */
+::-webkit-scrollbar {
+    width: 1px;  /* Yatay kaydırma çubuğunun genişliği */
+    height: 1px; /* Dikey kaydırma çubuğunun yüksekliği */
+}
+
+/* Kaydırma çubuğunun arka plan rengini değiştir */
+::-webkit-scrollbar-track {
+    background-color: #000000; /* Arka plan rengi */
+    border-radius: 1px; /* Kenarları yuvarlama */
+}
+
+/* Kaydırma çubuğunun kendisini (bar) değiştir */
+::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Kaydırma çubuğunun rengi */
+    border-radius: 1px; /* Kenarları yuvarlama */
+}
+
+/* Kaydırma çubuğunun üzerine gelindiğinde */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #000000; /* Hover rengi */
+}
