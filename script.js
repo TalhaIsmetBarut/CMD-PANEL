@@ -250,6 +250,9 @@ input.addEventListener("keydown", (e) => {
 \n  -cpu-load → Show CPU usage.
 \n  -version  → Show terminal version.
 \n  -os       → Show OS info.
+\n  -gnrpass  → Random password generation.
+\n  -roll     → Dice rolling.
+\n  -cat      → Just cat.
 \n  -reboot   → Reboots the terminal.
 \n  -clear    → Clears the terminal screen.
 `;
