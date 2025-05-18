@@ -21,14 +21,12 @@ body {
             position: relative;
         }
 
-        /* Terminal Satır Stili */
         .terminal-line {
             margin: 0;
             padding: 5px;
             font-size: 16px;
         }
 
-        /* Buton Stili */
         .panel-button {
             background-color: #333;
             color: #00ff00;
@@ -45,7 +43,7 @@ body {
             color: #000;
         }
 
-        /* Alt Panel Bölmesi */
+
         .bottom-panel {
             display: flex;
             justify-content: space-between;
@@ -94,29 +92,29 @@ body {
     }
 
     #terminal-wrapper {
-      display: none; /* Başlangıçta gizli */
+      display: none; 
       padding: 20px;
     }
 
-    /* Kaydırma çubuğunun genel stilini özelleştirme */
+
 ::-webkit-scrollbar {
-    width: 1px;  /* Yatay kaydırma çubuğunun genişliği */
-    height: 1px; /* Dikey kaydırma çubuğunun yüksekliği */
+    width: 1px;  
+    height: 1px; 
 }
 
-/* Kaydırma çubuğunun arka plan rengini değiştir */
+
 ::-webkit-scrollbar-track {
-    background-color: #000000; /* Arka plan rengi */
-    border-radius: 1px; /* Kenarları yuvarlama */
+    background-color: #000000; 
+    border-radius: 1px; 
 }
 
-/* Kaydırma çubuğunun kendisini (bar) değiştir */
+
 ::-webkit-scrollbar-thumb {
-    background-color: #000000; /* Kaydırma çubuğunun rengi */
-    border-radius: 1px; /* Kenarları yuvarlama */
+    background-color: #000000; 
+    border-radius: 1px; 
 }
 
-/* Kaydırma çubuğunun üzerine gelindiğinde */
+
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #000000; /* Hover rengi */
+    background-color: #000000;
 }
