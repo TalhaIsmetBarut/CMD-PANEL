@@ -468,12 +468,12 @@ case "-guess":
     output.innerHTML += `\n\nSystem Uptime: ${hours}h ${minutes}m ${Math.floor(seconds)}s\n`;
     break;
 
-    case "-to":`
-    
+    case "-to":
+    output.innerHTML += `
     \n Play a song in the terminal.
     \n snake game.
     \n diffrent animals.
-    `
+`;
     break;
 
 
