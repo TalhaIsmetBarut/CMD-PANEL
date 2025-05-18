@@ -45,7 +45,7 @@
 
 
  function getRandomHardwareInfo() {
-      const isIntel = Math.random() > 0.5; // %50 ihtimalle Intel ya da AMD seçilecek
+      const isIntel = Math.random() > 0.5;
       const platform = isIntel ? "Intel" : "AMD";
       const selectedCPU = cpuAndMotherboard[platform].cpuModels[Math.floor(Math.random() * cpuAndMotherboard[platform].cpuModels.length)];
       const selectedMotherboard = cpuAndMotherboard[platform].motherboards[Math.floor(Math.random() * cpuAndMotherboard[platform].motherboards.length)];
@@ -53,7 +53,7 @@
       return {
         bios: BIOS[Math.floor(Math.random() * BIOS.length)],
         cpu: selectedCPU,
-        ram: ramSizesMB[Math.floor(Math.random() * ramSizesMB.length)] + " MB", // MB cinsinden yazdırıyoruz
+        ram: ramSizesMB[Math.floor(Math.random() * ramSizesMB.length)] + " MB",
         gpu: gpuModels[Math.floor(Math.random() * gpuModels.length)],
         motherboard: selectedMotherboard,
         ip: ipAddresses[Math.floor(Math.random() * ipAddresses.length)],
@@ -61,7 +61,7 @@
       };
     }
 
-    // Rastgele donanım bilgilerini al
+    
     const hardwareInfo = getRandomHardwareInfo();
 
     const lines = [
@@ -165,9 +165,9 @@
             newLine.textContent = lines[currentLine];
             terminal.appendChild(newLine);
             currentLine++;
-            setTimeout(printLine, 18); // Her satır arasındaki süre
+            setTimeout(printLine, 18); 
         } else {
-            // ⏱️ Tüm animasyon bittiğinde "last update" yazısını güncelle
+            
             const now = new Date();
             lastUpdate.textContent = `Last update: ${now.toLocaleString()}`;
         }
@@ -175,10 +175,10 @@
     }
 
 
-        // Sadece Delete tuşuyla başlat
+        
 function handleDeleteOnce(e) {
   if (e.key === 'Delete') {
-    terminal.innerHTML = ''; // Ekranı temizle
+    terminal.innerHTML = ''; 
     playStartup();
     runLines();
 
@@ -202,13 +202,13 @@ function handleDeleteOnce(e) {
       document.getElementById("terminalinput").style.display = "flex";
     }, 15540);
 
-    // Hoş geldiniz mesajını göstermek için bir timer ekleyelim
+    
 setTimeout(() => {
     const welcomeMessage = document.getElementById("welcome-message");
-    welcomeMessage.style.display = "block"; // Hoş geldiniz mesajını göster
-}, 15540); // 1 saniye sonra gösterilecek
+    welcomeMessage.style.display = "block"; 
+}, 15540); 
 
-    // Sadece bir kere çalışmasını sağla
+    
     document.removeEventListener('keydown', handleDeleteOnce);
   }
 }
@@ -339,8 +339,8 @@ input.addEventListener("keydown", (e) => {
 case "-matrix":
     output.innerHTML += "\n\n[Matrix mode enabled]\n";
 
-    const colCount = Math.floor(Math.random() * 3) + 3; // 3-5 sütun
-    const heights = Array.from({ length: colCount }, () => Math.floor(Math.random() * 6) + 5); // her biri 5-10 satır
+    const colCount = Math.floor(Math.random() * 3) + 3; 
+    const heights = Array.from({ length: colCount }, () => Math.floor(Math.random() * 6) + 5); 
     const buffers = Array(colCount).fill("");
 
     let step = 0;
@@ -438,7 +438,7 @@ case "-matrix":
     case "-game":
     const number = Math.floor(Math.random() * 5) + 1;
     output.innerHTML += `\n\nGuess the number between 1 and 5 (type -guess <number>)`;
-    window.secretNumber = number; // Global değişken
+    window.secretNumber = number; 
     break;
 
 case "-guess":
@@ -474,7 +474,7 @@ case "-guess":
                  output.innerHTML += "\n \nSystem rebooting...";
                   setTimeout(() => {
                       location.reload();
-                  }, 2000); // 2 saniye sonra F5 atar
+                  }, 2000); 
                 break;
                 case "-whoami":
                   output.innerHTML += "\n \n t1b@localhost";
@@ -486,6 +486,6 @@ case "-guess":
                 output.innerHTML += `\nUnknown command: ${command}`;
         }
 
-        output.scrollTop = output.scrollHeight; // Aşağı kaydır
+        output.scrollTop = output.scrollHeight;
     }
 });
