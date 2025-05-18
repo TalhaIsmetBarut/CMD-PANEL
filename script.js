@@ -246,7 +246,7 @@ input.addEventListener("keydown", (e) => {
 \n  -ping     → Sends ping to a server.
 \n  -matrix   → Activate matrix mode.
 \n  -fortune  → Get a random tip.
-\n  -uptime   → Show system uptime
+\n  -uptime   → Show system uptime.
 \n  -cpu-load → Show CPU usage.
 \n  -version  → Show terminal version.
 \n  -os       → Show OS info.
