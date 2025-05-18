@@ -253,6 +253,7 @@ input.addEventListener("keydown", (e) => {
 \n  -gnrpass  → Random password generation.
 \n  -roll     → Dice rolling.
 \n  -cat      → Just cat.
+\n  -to       → To be added
 \n  -reboot   → Reboots the terminal.
 \n  -clear    → Clears the terminal screen.
 `;
@@ -467,7 +468,13 @@ case "-guess":
     output.innerHTML += `\n\nSystem Uptime: ${hours}h ${minutes}m ${Math.floor(seconds)}s\n`;
     break;
 
-
+    case "-to":`
+    
+    \n Play a song in the terminal.
+    \n snake game.
+    \n diffrent animals.
+    `
+    break;
 
 
             case "-reboot":
