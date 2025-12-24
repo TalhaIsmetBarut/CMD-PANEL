@@ -387,7 +387,6 @@ case "-matrix":
       "Sometimes the best command is no command.",
       "Try turning it off and on again.",
       "You are the system administrator. Fear you must.",
-      "I love Asude very much.",
       "You will win if you don’t quit.",
       "If opportunity doesn’t knock, buiId a door.",
       "Before you  judge me, Make sure that you’re perfect.",
@@ -496,3 +495,4 @@ case "-guess":
         output.scrollTop = output.scrollHeight;
     }
 });
+
