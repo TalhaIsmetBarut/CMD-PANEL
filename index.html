@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    // FRAME BUSTER: Siteyi iframe içine hapsederlerse kurtul!
+    if (window.top !== window.self) {
+        window.top.location = window.self.location;
+    }
+</script>
   <meta charset="UTF-8">
   <title>System Panel</title>
   <link rel="stylesheet" href="styles.css">
@@ -38,3 +44,4 @@
   
 </body>
 </html>
+
