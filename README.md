@@ -1,1 +1,1 @@
-# pannel
+cmd-panel is a web-based terminal simulator that mimics a classic command prompt experience. Features include a realistic BIOS boot animation, randomized hardware information, and various interactive commands like -ping, -matrix, -scan, and more. Fully responsive with device-specific hardware profiles for both desktop and mobile
