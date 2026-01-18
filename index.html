@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <script>
-    // FRAME BUSTER: Siteyi iframe içine hapsederlerse kurtul!
-    if (window.top !== window.self) {
-        window.top.location = window.self.location;
-    }
-</script>
   <meta charset="UTF-8">
-  <title>System Panel</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminal Girişi</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" async></script>
-  <link rel="icon" type="image/png" href="logo.ico">
 </head>
+
 <body>
   <audio id="startupSound" src="sound_1.MP3"></audio>
 
-  
+
   <div class="panel">
-        <div id="terminal">Press Del to initialize the system</div>
-        <div id="terminal-output" class="terminal"></div>
-<div id="welcome-message" style="margin-top: 5px; display: none;">
-    <p>Welcome To T1B Terminal Interface</p><br>
-    <p>Type '-help' and press [Enter] to see available commands.</p><br>
-</div>
-<div style="margin-top: 5px;">
-  <input id="terminalinput" type="text" autocomplete="off" placeholder="Type a command..." />
-</div>
+    <div id="terminal">Press Del to initialize the system</div>
+    <div id="terminal">
 
-<div id="output"></div>
-
-
- 
-        <div class="bottom-panel">
-            <div id="NetworkStatus">Network Status: OFFLINE</div>
-            <div id="lastUpdate">Last update: Loading...</div>
-        </div>
-        
     </div>
 
-   
-  
+
+    <div class="bottom-panel">
+      <div id="NetworkStatus">Network Status: OFFLINE</div>
+      <div id="lastUpdate">Last update: Loading...</div>
+    </div>
+
+
+  </div>
+
+
+
 </body>
+
 </html>
-
-
-
