@@ -32,7 +32,7 @@ Developed by <strong>Mr.T1B</strong>
 
 <br>
 
-[**🌐 Live (t1b.xyz)**](https://t1b.xyz)
+[**🌐 Live**](https://t1b.xyz)
 
 <br>
 
