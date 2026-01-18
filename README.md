@@ -25,5 +25,20 @@ As a Cyber Security student, this project focuses on "Secure by Design" principl
 - **Configuration:** JSON based header management
 ---
 <div align="center">
-  Developed by <strong>Mr.T1B</strong>
+
+# 📟 CMD-PANEL
+
+Developed by <strong>Mr.T1B</strong>
+
+<br>
+
+[**🌐 Live Demo (t1b.xyz)**](https://t1b.xyz)
+
+<br>
+
+![Security Headers](https://img.shields.io/badge/Security%20Headers-A%2B-success?style=for-the-badge&logo=security-scorecard)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)
+
 </div>
+
+---
