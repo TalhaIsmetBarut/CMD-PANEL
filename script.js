@@ -1,3 +1,7 @@
+// Mobile Device Detection
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  || (window.innerWidth <= 768);
+
 const terminal = document.getElementById('terminal');
 const panel = document.getElementById('main-panel');
 const sound = document.getElementById('startupSound');
@@ -19,6 +23,7 @@ const BIOS = [
   "v6.22.15", "v7.11.28"
 ];
 
+// PC Hardware
 const cpuAndMotherboard = {
   "Intel": {
     cpuModels: ["Intel Core i7-10700K", "Intel Core i5-9600KF", "Intel Core i9-11900K", "Intel Xeon E-2288G"],
@@ -36,6 +41,64 @@ const gpuModels = [
   "NVIDIA GTX 1050 Ti", "AMD Radeon RX 5700 XT", "NVIDIA Quadro RTX 4000", "NVIDIA GTX 1080 Ti",
   "NVIDIA RTX 3070", "AMD Radeon RX 580"
 ];
+
+// Mobile Device Profiles with matched hardware
+const mobileDeviceProfiles = [
+  // Samsung
+  { device: "Samsung Galaxy S23 Ultra", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 12288 },
+  { device: "Samsung Galaxy S23+", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 8192 },
+  { device: "Samsung Galaxy S23", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 8192 },
+  { device: "Samsung Galaxy A54", cpu: "Samsung Exynos 1380", gpu: "Mali-G68", ram: 8192 },
+  { device: "Samsung Galaxy A34", cpu: "MediaTek Dimensity 1080", gpu: "Mali-G68", ram: 6144 },
+  { device: "Samsung Galaxy Z Fold5", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 12288 },
+  { device: "Samsung Galaxy Z Flip5", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 8192 },
+
+  // Apple
+  { device: "iPhone 15 Pro Max", cpu: "Apple A17 Pro", gpu: "Apple GPU (6-core)", ram: 8192 },
+  { device: "iPhone 15 Pro", cpu: "Apple A17 Pro", gpu: "Apple GPU (6-core)", ram: 8192 },
+  { device: "iPhone 15", cpu: "Apple A16 Bionic", gpu: "Apple GPU (5-core)", ram: 6144 },
+  { device: "iPhone 14 Pro Max", cpu: "Apple A16 Bionic", gpu: "Apple GPU (5-core)", ram: 6144 },
+  { device: "iPhone 14 Pro", cpu: "Apple A16 Bionic", gpu: "Apple GPU (5-core)", ram: 6144 },
+  { device: "iPhone 14", cpu: "Apple A15 Bionic", gpu: "Apple GPU (5-core)", ram: 6144 },
+  { device: "iPhone 13 Pro Max", cpu: "Apple A15 Bionic", gpu: "Apple GPU (5-core)", ram: 6144 },
+  { device: "iPhone 13", cpu: "Apple A15 Bionic", gpu: "Apple GPU (4-core)", ram: 4096 },
+
+  // Google Pixel
+  { device: "Google Pixel 8 Pro", cpu: "Google Tensor G3", gpu: "Immortalis-G715", ram: 12288 },
+  { device: "Google Pixel 8", cpu: "Google Tensor G3", gpu: "Immortalis-G715", ram: 8192 },
+  { device: "Google Pixel 7 Pro", cpu: "Google Tensor G2", gpu: "Mali-G710", ram: 12288 },
+  { device: "Google Pixel 7a", cpu: "Google Tensor G2", gpu: "Mali-G710", ram: 8192 },
+  { device: "Google Pixel 7", cpu: "Google Tensor G2", gpu: "Mali-G710", ram: 8192 },
+
+  // OnePlus
+  { device: "OnePlus 12", cpu: "Qualcomm Snapdragon 8 Gen 3", gpu: "Adreno 750", ram: 16384 },
+  { device: "OnePlus 11", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 16384 },
+  { device: "OnePlus Nord 3", cpu: "MediaTek Dimensity 9000", gpu: "Mali-G710", ram: 8192 },
+
+  // Xiaomi
+  { device: "Xiaomi 14 Pro", cpu: "Qualcomm Snapdragon 8 Gen 3", gpu: "Adreno 750", ram: 16384 },
+  { device: "Xiaomi 13 Pro", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 12288 },
+  { device: "Xiaomi 13", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 8192 },
+  { device: "Redmi Note 13 Pro+", cpu: "MediaTek Dimensity 7200", gpu: "Mali-G610", ram: 8192 },
+
+  // OPPO
+  { device: "OPPO Find X6 Pro", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 16384 },
+  { device: "OPPO Find X5 Pro", cpu: "Qualcomm Snapdragon 8 Gen 1", gpu: "Adreno 730", ram: 12288 },
+  { device: "OPPO Reno 10 Pro+", cpu: "Qualcomm Snapdragon 8+ Gen 1", gpu: "Adreno 730", ram: 12288 },
+
+  // Realme
+  { device: "Realme GT 5 Pro", cpu: "Qualcomm Snapdragon 8 Gen 3", gpu: "Adreno 750", ram: 16384 },
+  { device: "Realme GT Neo 5", cpu: "Qualcomm Snapdragon 8+ Gen 1", gpu: "Adreno 730", ram: 8192 },
+
+  // Huawei
+  { device: "Huawei Mate 60 Pro", cpu: "Kirin 9000S", gpu: "Maleoon 910", ram: 12288 },
+  { device: "Huawei P60 Pro", cpu: "Qualcomm Snapdragon 8+ Gen 1", gpu: "Adreno 730", ram: 8192 },
+
+  // Sony
+  { device: "Sony Xperia 1 V", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 12288 },
+  { device: "Sony Xperia 5 V", cpu: "Qualcomm Snapdragon 8 Gen 2", gpu: "Adreno 740", ram: 8192 }
+];
+
 const ipAddresses = [
   "192.168.1.1", "172.16.0.5", "10.0.0.25", "37.128.64.192",
   "192.168.0.101", "10.10.0.15", "172.20.10.3", "10.1.1.1",
@@ -54,20 +117,35 @@ const Infected = [
 ];
 
 function getRandomHardwareInfo() {
-  const isIntel = Math.random() > 0.5;
-  const platform = isIntel ? "Intel" : "AMD";
-  const selectedCPU = cpuAndMotherboard[platform].cpuModels[Math.floor(Math.random() * cpuAndMotherboard[platform].cpuModels.length)];
-  const selectedMotherboard = cpuAndMotherboard[platform].motherboards[Math.floor(Math.random() * cpuAndMotherboard[platform].motherboards.length)];
+  if (isMobile) {
+    // Mobile Hardware - select a random device with matched specs
+    const selectedDevice = mobileDeviceProfiles[Math.floor(Math.random() * mobileDeviceProfiles.length)];
+    return {
+      bios: BIOS[Math.floor(Math.random() * BIOS.length)],
+      cpu: selectedDevice.cpu,
+      ram: selectedDevice.ram + " MB",
+      gpu: selectedDevice.gpu,
+      motherboard: selectedDevice.device,
+      ip: ipAddresses[Math.floor(Math.random() * ipAddresses.length)],
+      mac: macAddresses[Math.floor(Math.random() * macAddresses.length)]
+    };
+  } else {
+    // PC Hardware
+    const isIntel = Math.random() > 0.5;
+    const platform = isIntel ? "Intel" : "AMD";
+    const selectedCPU = cpuAndMotherboard[platform].cpuModels[Math.floor(Math.random() * cpuAndMotherboard[platform].cpuModels.length)];
+    const selectedMotherboard = cpuAndMotherboard[platform].motherboards[Math.floor(Math.random() * cpuAndMotherboard[platform].motherboards.length)];
 
-  return {
-    bios: BIOS[Math.floor(Math.random() * BIOS.length)],
-    cpu: selectedCPU,
-    ram: ramSizesMB[Math.floor(Math.random() * ramSizesMB.length)] + " MB",
-    gpu: gpuModels[Math.floor(Math.random() * gpuModels.length)],
-    motherboard: selectedMotherboard,
-    ip: ipAddresses[Math.floor(Math.random() * ipAddresses.length)],
-    mac: macAddresses[Math.floor(Math.random() * macAddresses.length)]
-  };
+    return {
+      bios: BIOS[Math.floor(Math.random() * BIOS.length)],
+      cpu: selectedCPU,
+      ram: ramSizesMB[Math.floor(Math.random() * ramSizesMB.length)] + " MB",
+      gpu: gpuModels[Math.floor(Math.random() * gpuModels.length)],
+      motherboard: selectedMotherboard,
+      ip: ipAddresses[Math.floor(Math.random() * ipAddresses.length)],
+      mac: macAddresses[Math.floor(Math.random() * macAddresses.length)]
+    };
+  }
 }
 
 const hardwareInfo = getRandomHardwareInfo();
@@ -163,44 +241,60 @@ function runLines() {
   }
 }
 
-function handleDeleteOnce(e) {
-  if (e.key === 'Delete') {
-    terminal.innerHTML = '';
-    playStartup();
-    runLines();
+function startTerminal() {
+  terminal.innerHTML = '';
+  playStartup();
+  runLines();
 
-    setTimeout(() => {
-      const lastUpdate = document.getElementById("lastUpdate");
-      lastUpdate.textContent = "Last update: 1 Day Ago";
-    }, 8500);
+  setTimeout(() => {
+    const lastUpdate = document.getElementById("lastUpdate");
+    lastUpdate.textContent = "Last update: 1 Day Ago";
+  }, 8500);
 
-    setTimeout(() => {
-      const now = new Date();
-      const lastUpdate = document.getElementById("lastUpdate");
-      lastUpdate.textContent = `Last update: ${now.toLocaleString()}`;
-    }, 13500);
+  setTimeout(() => {
+    const now = new Date();
+    const lastUpdate = document.getElementById("lastUpdate");
+    lastUpdate.textContent = `Last update: ${now.toLocaleString()}`;
+  }, 13500);
 
-    setTimeout(() => {
-      const NetworkStatus = document.getElementById("NetworkStatus");
-      NetworkStatus.textContent = "Network Status: ONLINE";
-    }, 900);
+  setTimeout(() => {
+    const NetworkStatus = document.getElementById("NetworkStatus");
+    NetworkStatus.textContent = "Network Status: ONLINE";
+  }, 900);
 
-    setTimeout(() => {
-      const input = document.getElementById("terminalinput");
-      input.style.display = "flex";
-      input.focus();
-    }, 15540);
+  setTimeout(() => {
+    const input = document.getElementById("terminalinput");
+    input.style.display = "flex";
+    input.focus();
+  }, 15540);
 
-    setTimeout(() => {
-      const welcomeMessage = document.getElementById("welcome-message");
-      welcomeMessage.style.display = "block";
-    }, 15540);
-
-    document.removeEventListener('keydown', handleDeleteOnce);
-  }
+  setTimeout(() => {
+    const welcomeMessage = document.getElementById("welcome-message");
+    welcomeMessage.style.display = "block";
+  }, 15540);
 }
 
-document.addEventListener('keydown', handleDeleteOnce);
+// Set initial message and event listener based on device type
+const initMessage = document.getElementById("init-message");
+if (isMobile) {
+  initMessage.textContent = "Tap anywhere to initialize the system";
+
+  function handleTapOnce() {
+    startTerminal();
+    document.removeEventListener('click', handleTapOnce);
+  }
+  document.addEventListener('click', handleTapOnce);
+} else {
+  initMessage.textContent = "Press Del to initialize the system";
+
+  function handleDeleteOnce(e) {
+    if (e.key === 'Delete') {
+      startTerminal();
+      document.removeEventListener('keydown', handleDeleteOnce);
+    }
+  }
+  document.addEventListener('keydown', handleDeleteOnce);
+}
 
 const welcomemessage = document.getElementById("welcome-message");
 const output = document.getElementById("terminal-output");
