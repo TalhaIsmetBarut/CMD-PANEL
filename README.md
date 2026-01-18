@@ -28,7 +28,7 @@ As a Cyber Security student, this project focuses on "Secure by Design" principl
 
 # 📟 CMD-PANEL
 
-Developed by <strong>Mr.T1B</strong>
+Developed by <strong>T1B</strong>
 
 <br>
 
