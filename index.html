@@ -3,36 +3,42 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminal Girişi</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; frame-ancestors 'none';">
+
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" async></script>
 </head>
 
 <body>
-
   <audio id="startupSound" src="sound_1.MP3"></audio>
 
 
   <div class="panel">
     <div id="terminal">Press Del to initialize the system</div>
-    <div id="terminal">
 
+    <div id="main-panel">
+      <div id="welcome-message">Type -help for available commands</div>
+      <div id="terminal-output"></div>
+      <input type="text" id="terminalinput" placeholder="> Enter command...">
     </div>
-
 
     <div class="bottom-panel">
       <div id="NetworkStatus">Network Status: OFFLINE</div>
       <div id="lastUpdate">Last update: Loading...</div>
     </div>
-
-
   </div>
 
-
-
+  <script src="script.js"></script>
 </body>
 
 </html>
-
